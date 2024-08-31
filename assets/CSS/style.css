@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Common */
+html {
+    font-family: "Inter", sans-serif; ;
+}
+:root {
+    --background-base: #121212;
+    --background-primary: #000000;
+    --bs-card-border-width: 0;
+}
+
+
+
+.free-music {
+    display: flex;
+}
+
+.sidebar {
+    background-color: aqua;
+    width: 240px;
+    height: 100vh;
+    background-color: var(--background-primary);
+}
+
+
+.sidebar .nav {
+    margin-top: 15px;
+    display: block;
+}
+.sidebar a {
+    text-decoration: none;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 12px 21px;
+    color: #dadada;
+}
+
+.nav {
+    position: relative;
+}
+
+.nav .nav-item{
+    font-size: 16px;
+    padding: 10px;
+}
+
+.nav .nav-item li i {
+    margin-right: 5px;
+}
+
+.nav .nav-item li a {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    transition: ease-out s;
+}
+
+.nav .nav-item li:hover a {
+    color: #f7f4f4;
+    background-color: var(--background-base);
+}
+
+.nav-item .live {
+    position: relative;
+    left: 2px;
+    color: white;
+    font-size: 10px;
+    background-color: red;
+    padding: 3px 10px;
+    border-radius: 25px;
+}
+
+.nav::after {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    width: 90%;
+    height: 1px;    
+    background-color: #e8e8e8 ;
+    opacity: 0.2;
+}
+
+.main {
+    background-color: var(--background-base);
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    background-color: var(--background-primary);
+}
+
+.header .level-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+}
+
+.header .home {
+    padding: 10px;
+    border-radius: 30%;
+    background-color: #353b48;
+}
+
+.header .home:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+
+.searchbar{
+    height: 50px;
+    max-width: 440px;
+    width: 440px;
+    background-color: #353b48;
+    border-radius: 25px;
+    padding: 5px 5px 0 5px;
+    margin-left: 20px;
+}
+
+.search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    line-height: 40px;
+    width: 80%;
+}
+
+
+.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}
+
+.search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    /* text-decoration:none; */
+
+}
+
+.search_input::placeholder {
+    color: #818181;
+}
+
+
+.level-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 25px;
+    color: white;
+}
+
+.level-right .noti {
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.level-right .noti:hover {
+    color: #0099ff;
+}
+
+
+.level-right .avatar-box .avatar {
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+
+.level-right .avatar-box:hover .avatar {
+    cursor: pointer;
+}
+
+.level-right .install-app {
+    margin-left: 30px;
+}
+
+.level-right .install-app a,
+.level-right .upgrade-premium a {
+    padding: 25px 0 25px 0;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ea, text-decoration 0.3s ease-in; 
+}
+
+.level-right a:hover {
+    color: #0099ff; 
+    text-decoration: underline; 
+    transform: scale(1.1);
+}
+
+.level-right a:hover i {
+    color: #0099ff; 
+}
+
+/* Home Page */
+
+.banner {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
+    width: 970px;
+   height: 250px;
+    object-fit: cover;
+
+}
+
+.banner.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* gallery */
+
+.gallery {
+    width: 100%;
+    height: 281px;
+    margin-top: 25px;
+}
+
+.gallery .gallery-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+.gallery .gallery-item .card {
+    border: var(--bs-card-border-width);
+    box-shadow: 5px 5px #0d0d0d;
+transition: 1s;
+}
+
+.gallery .gallery-item img {
+    width: 100%;
+   height: 281px;
+   border-radius: 8px;
+   border: var(--bs-card-border-width);
+
+}
+
