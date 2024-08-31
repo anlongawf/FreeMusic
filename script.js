@@ -3,9 +3,6 @@ window.onload = function() {
     showPage('explore');
 };
 
-
-
-
 function showPage(page) {
     document.getElementById('explore').style.display = 'none';
     document.getElementById('libary').style.display = 'none';
