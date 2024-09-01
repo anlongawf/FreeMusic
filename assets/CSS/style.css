@@ -14,6 +14,10 @@ html {
     --bs-card-border-width: 0;
 }
 
+.btn {
+    cursor: pointer;
+}
+
 a {
     text-decoration: none;
 }
@@ -267,7 +271,7 @@ a {
     gap: 20px;
 }
 
-.gallery .gallery-item .card {
+.gallery .gallery-item .gallery-card {
     border: var(--bs-card-border-width);
     box-shadow: 5px 5px #0d0d0d;
     transition: 1s;
@@ -308,22 +312,37 @@ a {
     text-transform: uppercase;
 }
 
+
+
 .genre-select {
     display: flex;
     text-transform: uppercase;
     gap: 15px;
+    margin-bottom: 5px;
 }
 
 .genre-select .fm-btn {
     border-radius: 25px;
+    border: 1px solid;
     color: white;
     padding: 5px 15px;
-    background-color: var(--background-base);
+    background-color: transparent;
     font-weight: bold;
     font-size: 10px;
     text-transform: uppercase;
 }
+
 .genre-select .fm-btn:nth-child(1) {
     border-color: var(--background-primary);
     background-color: #0099ff;
 }
+
+
+@media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+    .main {
+    margin-left: 0;
+    }
+  }

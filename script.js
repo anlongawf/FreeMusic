@@ -30,3 +30,20 @@ function moveCards() {
 
 
 setInterval(moveCards, 3000);
+
+
+
+  function removeSidebarOnMobile() {
+    if (window.innerWidth <= 768) {
+      var sidebar = document.querySelector(".sidebar");
+      if (sidebar) {
+        sidebar.remove(); // Xoá sidebar trên mobile
+      }
+    }
+  }
+
+  // Gọi hàm khi trang tải lần đầu
+  removeSidebarOnMobile();
+
+  // Gọi hàm khi cửa sổ thay đổi kích thước
+  window.addEventListener('resize', removeSidebarOnMobile);
