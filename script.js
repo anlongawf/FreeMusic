@@ -19,8 +19,8 @@ function showPage(page) {
 // Change img
 
 function moveCards() {
-    const galleryItem = document.querySelector('.gallery-item');
-    const cards = Array.from(galleryItem.querySelectorAll('.card'));
+    const galleryItem = document.querySelector('.row');
+    const cards = Array.from(galleryItem.querySelectorAll('.col-sm'));
 
     if (cards.length > 0) {
         const firstCard = cards[0];
