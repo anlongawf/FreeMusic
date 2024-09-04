@@ -12,11 +12,11 @@ html {
     --background-base: #121212;
     --background-primary: #000000;
     --bs-card-border-width: 0;
-    --texy-primary: #fff;
     --text-primary: #fff;
+    --text-second-primary: #0099ff;
 }
 
-.fm-section {
+.fm-box {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,16 +31,18 @@ html {
     text-transform: capitalize; 
 }
 
-.fm-section .btn-discovery {
+.fm-box a {
     font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     color: var(--text-primary);
     opacity: 0.6;
+    text-decoration: none;
 }
 
-.fm-section .btn-discovery:hover {
-    color: #0099ff;
+.fm-box a:hover{
+    color: var(--text-second-primary);
+    opacity: 1;
 }
 
 
@@ -64,6 +66,18 @@ html {
     color: rgb(170, 170, 170);
     text-decoration: none;
 }
+
+.live {
+    position: relative;
+    left: 2px;
+    color: white;
+    font-size: 10px;
+    background-color: red;
+    padding: 3px 10px;
+    border-radius: 25px;
+    text-transform: uppercase;
+}
+
 
 /*  */
 
@@ -119,15 +133,6 @@ html {
     background-color: var(--background-base);
 }
 
-.nav-item .live {
-    position: relative;
-    left: 2px;
-    color: white;
-    font-size: 10px;
-    background-color: red;
-    padding: 3px 10px;
-    border-radius: 25px;
-}
 
 .nav::after {
     position: absolute;
@@ -242,7 +247,7 @@ html {
 }
 
 .level-right .noti:hover {
-    color: #0099ff;
+    color: var(--text-second-primary);
 }
 
 
@@ -268,13 +273,13 @@ html {
 }
 
 .level-right a:hover {
-    color: #0099ff; 
+    color: var(--text-second-primary); 
     text-decoration: underline; 
     transform: scale(1.1);
 }
 
 .level-right a:hover i {
-    color: #0099ff; 
+    color: var(--text-second-primary); 
 }
 
 /* Home Page */
@@ -329,10 +334,13 @@ html {
    height: 281px;
    border-radius: 8px;
    border: var(--bs-card-border-width);
-
 }
 
-/* Recent */
+.gallery img:hover {
+    scale: 1.1;
+    transition: 2s;
+}
+
 
 .button-container {
     margin-top: 40px;
@@ -341,10 +349,6 @@ html {
     align-items: center;
     justify-content: space-between;
 }
-
-
-
-
 
 .genre-select {
     display: flex;
@@ -370,51 +374,51 @@ html {
 
 .genre-select .fm-btn:nth-child(1) {
     border-color: var(--background-primary);
-    background-color: #0099ff;
+    background-color: var(--text-second-primary);
 }
 
-.recent {
-    margin-bottom: 35px;
+/* Recent */
+
+.recent .card {
+    background-color: transparent;
 }
 
-.recent .row .col {
-    width: 14.28571%;
+.recent .card:hover .title {
+    color: var(--text-second-primary);
 }
 
-.recent .row img {
+.recent .card:hover {
+    scale: 1.1;
+    transition: 3s;
+}
+
+.recent .card .thumb {
     width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 
-.recent .row a {
+.recent .card .title {
+    padding-top: 8px;
+    padding-left: 8px;
+    color: var(--text-primary);
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.recent .row  span {
-    color: white;
-   
+.recent .col-md-2:nth-of-type(1) .title {
+    padding-left: 0;
 }
 
-.recent .first-img img {
+.recent .col-md-2:nth-of-type(1) .thumb {
     border-radius: 50%;
 }
 
-.recent .first-img span {
-    padding-top: 5px;
-    display: flex;
-    justify-content: center;
-
-}
-  
-
-
 @media (min-width: 1625px) {
-    .recent { 
-        margin: 0 13em;
-    }
 }
 
 /* New release */
@@ -429,8 +433,13 @@ html {
     .sidebar {
       display: none;
     }
+
     .main {
     margin-left: 0;
+    }
+
+    .recent {
+        display: none;
     }
   }
 

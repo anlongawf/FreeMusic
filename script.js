@@ -29,7 +29,7 @@ function moveCards() {
 }
 
 
-setInterval(moveCards, 3000);
+setInterval(moveCards, 5000);
 
 
 
