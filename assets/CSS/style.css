@@ -78,6 +78,13 @@ html {
     text-transform: uppercase;
 }
 
+.live-recent {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 
 /*  */
 
@@ -416,6 +423,10 @@ html {
 
 .recent .col-md-2:nth-of-type(1) .thumb {
     border-radius: 50%;
+}
+
+.recent .col-md-2:nth-of-type(1) .thumb::after {
+   
 }
 
 @media (min-width: 1625px) {
