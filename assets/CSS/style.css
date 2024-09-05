@@ -281,7 +281,6 @@ html {
 
 .level-right a:hover {
     color: var(--text-second-primary); 
-    text-decoration: underline; 
     transform: scale(1.1);
 }
 
@@ -304,7 +303,7 @@ html {
     justify-content: center;
 }
 
-.close-ads {
+/* .close-ads {
     position: absolute;
     z-index: 10;
     right: 90px;
@@ -312,7 +311,7 @@ html {
     cursor: pointer;
     color: var(--text-primary);
     font-size: 12px;
-}
+} */
 
 .banner img {
     width: 970px;
@@ -440,20 +439,39 @@ html {
     border-radius: 50%;
 }
 
-.recent .col-md-2:nth-of-type(1) .thumb::after {
-   
-}
 
-@media (min-width: 1625px) {
-}
 
 /* New release */
 
-.new-release {
-    margin-top: 15px;
+.nl-container {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.nl-container .media a {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.nl-container .title {
+    display: block;
+}
+
+.nl-container .artist {
+    display: block;
+}
+
+.nl-container .media img {
+    margin-right: 18px;
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
 }
 
 
+@media (min-width: 1625px) {
+}
 
 @media (max-width: 768px) {
     .sidebar {
