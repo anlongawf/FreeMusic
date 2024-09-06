@@ -396,30 +396,49 @@ html {
     background-color: var(--text-second-primary);
 }
 
-/* Recent */
+/* Container Card */
+.album-hot,
+.treding,
+.chill,
 .recent {
     margin-bottom: 26px;
 }
 
+.album-hot .card,
+.chill .card,
+.treding .card,
 .recent .card {
     background-color: transparent;
 }
 
+.album-hot .card:hover .title
+.chill .card:hover .title,
+.treding .card:hover .title,
 .recent .card:hover .title {
     color: var(--text-second-primary);
 }
 
+.album-hot .card:hover,
+.chill .card:hover,
+.treding .card:hover,
 .recent .card:hover {
     scale: 1.1;
     transition: 3s;
 }
 
+
+.album-hot .card .thumb,
+.chill .card .thumb,
+.treding .card .thumb,
 .recent .card .thumb {
     width: 100%;
     height: auto;
     border-radius: 20px;
 }
 
+.album-hot .card .title,
+.chill .card .title,
+.treding .card .title,
 .recent .card .title {
     padding-top: 8px;
     padding-left: 8px;
@@ -430,10 +449,6 @@ html {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.recent .col-md-2:nth-of-type(1) .title {
-    padding-left: 0;
 }
 
 .recent .col-md-2:nth-of-type(1) .thumb {
@@ -486,7 +501,6 @@ html {
     height: 70px;
     border-radius: 12px;
 }
-
 
 @media (min-width: 1798px) {
     .fm-box {
