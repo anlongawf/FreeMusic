@@ -17,6 +17,8 @@ html {
     --text-sub-primary: #ffffff80;
 }
 
+/* Loading */
+
 .fm-box {
     display: flex;
     align-items: center;
@@ -106,6 +108,18 @@ html {
     margin-top: 15px;
     display: block;
 }
+
+.sidebar .nav-top {
+    margin-top: 98px;
+}
+
+.sidebar .logo-img {
+    width: 220px;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
+
 .sidebar a {
     align-items: center;
     font-size: 14px;
@@ -153,6 +167,54 @@ html {
     opacity: 0.2;
 }
 
+/* Mobile nav */
+.mobile-container {
+    max-width: 480px;
+    margin: auto;
+    background-color: #555;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+  }
+  
+  .topnav #myLinks {
+    display: none;
+  }
+  
+  .topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+  .topnav a.icon {
+    background: black;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .topnav a:hover {
+    background-color: #ccc;
+    color: black;
+  }
+
+  
+  .active {
+    background-color: var(--background-primary);
+    color: white;
+  }
+
+  /* End mobile nav */
 .main {
     background-color: var(--background-base);
     height: 200vh;
@@ -393,10 +455,11 @@ html {
 
 .genre-select .fm-btn:nth-child(1) {
     border-color: var(--background-primary);
-    background-color: var(--text-second-primary);
+    background-color: var(--text-second-primary) !important; 
 }
 
 /* Container Card */
+.radio-hot,
 .album-hot,
 .treding,
 .chill,
@@ -404,6 +467,7 @@ html {
     margin-bottom: 26px;
 }
 
+.radio-hot .card,
 .album-hot .card,
 .chill .card,
 .treding .card,
@@ -411,22 +475,25 @@ html {
     background-color: transparent;
 }
 
-.album-hot .card:hover .title
+.radio-hot .card:hover .title,
+.album-hot .card:hover .title,
 .chill .card:hover .title,
 .treding .card:hover .title,
 .recent .card:hover .title {
     color: var(--text-second-primary);
 }
 
+.radio-hot .card:hover,
 .album-hot .card:hover,
 .chill .card:hover,
 .treding .card:hover,
 .recent .card:hover {
     scale: 1.1;
     transition: 3s;
+    cursor: pointer;
 }
 
-
+.radio-hot .card .thumb,
 .album-hot .card .thumb,
 .chill .card .thumb,
 .treding .card .thumb,
@@ -436,6 +503,7 @@ html {
     border-radius: 20px;
 }
 
+.radio-hot .card .title,
 .album-hot .card .title,
 .chill .card .title,
 .treding .card .title,
@@ -455,7 +523,9 @@ html {
     border-radius: 50%;
 }
 
-
+.radio-hot .card .thumb {
+    border-radius: 59%;
+}
 
 /* New release */
 
@@ -473,6 +543,8 @@ html {
 
 .nl-container .media a:hover {
     opacity: 0.9;
+    background-color: #3d3d3d;
+    border-radius: 25px;
 }
 
 .nl-container .title {
@@ -502,6 +574,70 @@ html {
     border-radius: 12px;
 }
 
+/* Radio */
+.radio-hot {
+    margin-bottom: 46px;
+}
+/* Partner */
+.partner {
+    display: none;
+    margin-top: 36px;
+    width: 100%;
+    text-align: center;
+}
+
+.partner .title {
+    color: var(--text-primary);
+    opacity: 0.4;
+}
+
+.partner .container .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.partner .container .col {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    justify-content: center;
+    margin: 6px;
+}
+
+.partner .container .img {
+    width: 100%;
+    
+}
+
+.partner .container img {
+    max-width: 90%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    width: 46px;
+    height: 46px;
+}
+
+
+
+/* Footer */
+.bg-custom-footer {
+    background-color: var(--background-base); 
+}
+
+
+@media (min-width: 768px) {
+    footer {
+        padding-left: 250px;
+    }
+    .topnav {
+        display: none;
+    }
+}
+
 @media (min-width: 1798px) {
     .fm-box {
         padding: 0 7rem;
@@ -510,10 +646,17 @@ html {
     .genre-select {
         padding: 0 6rem;
     }
+    footer {
+        padding-left: 250px;
+    }
 }
 
 @media (max-width: 768px) {
-    .sidebar {
+    .header,
+    .home-page,
+    .new-release,
+    .upgrade-premium,
+    .install-app {
       display: none;
     }
 
@@ -524,5 +667,130 @@ html {
     .recent {
         display: none;
     }
+    
+    .partner {
+        display: none;
+    }
+    .free-music {
+        display: block;
+    }
+    .topnav ul {
+        padding: 0 !important;
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
   }
+
+
+
+  /* QAW */
+
+
+
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 15px;
+    margin: 0;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #4e2a8c;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #6b3fbf;
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.spotify-embed {
+    margin-top: 25px;
+    min-height: 360px;
+    border: none;
+    width: 100%;
+}
+
+
+/* Radio page */
+
+.radio-hot .row {
+    margin: 45px 0;
+}
+
+/* Playlist page */
+
+.playlist {
+    margin-top: 25px;
+}
+
+/* Upload page */
+
+.upload {
+    padding: 25px 100px;
+    background-color: var(--background-base);
+    border: 1px solid #1b1c1d;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.2),  
+        0 -4px 8px rgba(0, 0, 0, 0.2), 
+        4px 0 8px rgba(0, 0, 0, 0.2), 
+        -4px 0 8px rgba(0, 0, 0, 0.2); 
+}
+
+.upload .title {
+    text-align: center;
+    color: white;
+}
+
+.custom-file-input {
+    display: none; 
+}
+
+.custom-file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3; 
+}
+
+.custom-file-label:active {
+    background-color: #004085;
+}
+
+.file-name {
+    margin-left: 10px;
+    font-weight: bold;
+    color: white;
+    opacity: 0.7;
+}
+
+
 

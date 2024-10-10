@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link rel="stylesheet" href="./Assets/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light p-3">
+        <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+            <a class="navbar-brand" href="#">
+                Bảng điều khiển
+            </a>
+            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+            <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  Hello, An Phan
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                  <li><a class="dropdown-item" href="#">Messages</a></li>
+                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+              </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span class="ml-2">Dashboard</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#new-trades">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+                            <span class="ml-2">New trades</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#online-user">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span class="ml-2">Online Users</span>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#reports">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            <span class="ml-2">Reports</span>
+                          </a>
+                        </li>
+                      </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                    </ol>
+                </nav>
+                <h1 class="h2">Bảng điều khiển</h1>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Khách hàng</h5>
+                            <div class="card-body">
+                              <h5 class="card-title">345k</h5>
+                              <p class="card-text">1 tháng 2 - 1 tháng 4, Việt Nam</p>
+                              <p class="card-text text-success">Tăng 18,2% so với tháng trước</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+                        <div class="card">
+                            <h5 class="card-header">Doanh thu</h5>
+                            <div class="card-body">
+                              <h5 class="card-title">$2.4k</h5>
+                              <p class="card-text">1 tháng 2 - 1 tháng 4, Việt Nam</p>
+                              <p class="card-text text-success">Tăng 4,6% so với tháng trước</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+                        <div class="card">
+                            <h5 class="card-header">Mua hàng</h5>
+                            <div class="card-body">
+                              <h5 class="card-title">43</h5>
+                              <p class="card-text">1 tháng 2 - 1 tháng 4, Việt Nam</p>
+                              <p class="card-text text-danger">Giảm 2,6% so với tháng trước</p>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+                        <div class="card">
+                            <h5 class="card-header">Luợt truy cập</h5>
+                            <div class="card-body">
+                              <h5 class="card-title">64k</h5>
+                              <p class="card-text">1 tháng 2 - 1 tháng 4, Việt Nam</p>
+                              <p class="card-text text-success">Tăng 2,5% so với tháng trước</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header" id="new-trades">Giao dịch mới nhất</h5>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Đặt hàng</th>
+                                            <th scope="col">Sản phẩm</th>
+                                            <th scope="col">Khách hàng</th>
+                                            <th scope="col">Tổng cộng</th>
+                                            <th scope="col">Ngày</th>
+                                            <th scope="col"></th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <th scope="row">17371705</th>
+                                            <td>Premium</td>
+                                            <td>johndoe@gmail.com</td>
+                                            <td>€61.11</td>
+                                            <td>31 tháng 9 2024</td>
+                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">17370540</th>
+                                            <td>Premium</td>
+                                            <td>jacob.monroe@company.com</td>
+                                            <td>$153.11</td>
+                                            <td>28 tháng 9 2024</td>
+                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">17371705</th>
+                                            <td>Plus</td>
+                                            <td>johndoe@gmail.com</td>
+                                            <td>€61.11</td>
+                                            <td>31 tháng 9 2024</td>
+                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">17370540</th>
+                                            <td>Premium</td>
+                                            <td>jacob.monroe@company.com</td>
+                                            <td>$153.11</td>
+                                            <td>28 tháng 9 2024</td>
+                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">17371705</th>
+                                            <td>Plus</td>
+                                            <td>johndoe@gmail.com</td>
+                                            <td>€61.11</td>
+                                            <td>31 tháng 9 2024</td>
+                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                          </tr>
+                                          <tr>
+                                            <th scope="row">17370540</th>
+                                            <td>Premium</td>
+                                            <td>jacob.monroe@company.com</td>
+                                            <td>$153.11</td>
+                                            <td>28 tháng 9 2024</td>
+                                            <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                                <a href="#" class="btn btn-block btn-light">Xem tất cả</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <h5 class="card-header">Lượt truy cập trong 6 tháng qua</h5>
+                            <div class="card-body">
+                                <div id="traffic-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <h5 class="card-header" id="online-user">Khách hàng đang online</h5>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID Khách hàng</th>
+                                                <th scope="col">Tên</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Thời gian online</th>
+                                                <th scope="col">Trạng thái</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Nguyễn Văn A</td>
+                                                <td>nguyenvana@example.com</td>
+                                                <td>10 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Trần Thị B</td>
+                                                <td>tranthib@example.com</td>
+                                                <td>5 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Phạm Văn C</td>
+                                                <td>phamvanc@example.com</td>
+                                                <td>1 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td>Nguyễn Thị D</td>
+                                                <td>nguyenthid@example.com</td>
+                                                <td>2 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td>Đỗ Minh E</td>
+                                                <td>dohminhe@example.com</td>
+                                                <td>8 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">6</th>
+                                                <td>Nguyễn Thế F</td>
+                                                <td>nguyenthef@example.com</td>
+                                                <td>3 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">7</th>
+                                                <td>Trần Văn G</td>
+                                                <td>tranvang@example.com</td>
+                                                <td>6 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">8</th>
+                                                <td>Nguyễn Thị H</td>
+                                                <td>nguyenthih@example.com</td>
+                                                <td>4 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">9</th>
+                                                <td>Phạm Văn I</td>
+                                                <td>phamvani@example.com</td>
+                                                <td>9 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Đỗ Thị J</td>
+                                                <td>dothij@example.com</td>
+                                                <td>7 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">11</th>
+                                                <td>Nguyễn Văn K</td>
+                                                <td>nguyenvank@example.com</td>
+                                                <td>2 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">12</th>
+                                                <td>Trần Thị L</td>
+                                                <td>tranthil@example.com</td>
+                                                <td>5 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">13</th>
+                                                <td>Phạm Văn M</td>
+                                                <td>phamvanm@example.com</td>
+                                                <td>1 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">14</th>
+                                                <td>Nguyễn Thị N</td>
+                                                <td>nguyenthina@example.com</td>
+                                                <td>3 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">15</th>
+                                                <td>Đỗ Minh O</td>
+                                                <td>dohmino@example.com</td>
+                                                <td>4 phút trước</td>
+                                                <td><span class="badge bg-success">Online</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Reports -->
+                <div class="row my-4" id="reports">
+                  <div class="col-12">
+                      <div class="card">
+                          <h5 class="card-header" id="online-user">Hỗ trợ khách hàng</h5>
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table">
+                                      <thead>
+                                          <tr>
+                                              <th scope="col">ID Khách hàng</th>
+                                              <th scope="col">Email</th>
+                                              <th scope="col">Thời gian</th>
+                                              <th scope="col">Hỗ trợ</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <th scope="row">1</th>
+                                              <td>nguyenvana@example.com</td>
+                                              <td>10 phút trước</td>
+                                              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, provident!</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">2</th>
+                                              <td>tranthib@example.com</td>
+                                              <td>5 phút trước</td>
+                                              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, provident!</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">3</th>
+                                              <td>phamvanc@example.com</td>
+                                              <td>1 phút trước</td>
+                                              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, provident!</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">4</th>
+                                              <td>nguyenthid@example.com</td>
+                                              <td>2 phút trước</td>
+                                              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, provident!</td>
+                                          </tr>
+                                          <tr>
+                                              <th scope="row">5</th>
+                                              <td>dohminhe@example.com</td>
+                                              <td>8 phút trước</td>
+                                              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, provident!</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                
+                <footer class="pt-5 d-flex justify-content-between">
+                    <span>Copyright &copy 2024-2025</span>
+                    <ul class="nav m-0">
+                        <li class="nav-item">
+                          <a class="nav-link text-secondary" aria-current="page" href="#">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-secondary" href="#">Terms and conditions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-secondary" href="#">Contact</a>
+                        </li>
+                      </ul>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        new Chartist.Line('#traffic-chart', {
+            labels: ['January', 'Februrary', 'March', 'April', 'May', 'June'],
+            series: [
+                [23000, 25000, 19000, 34000, 56000, 64000]
+            ]
+            }, {
+            low: 0,
+            showArea: true
+        });
+    </script>
+</body>
+</html>
