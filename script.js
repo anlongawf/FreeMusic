@@ -102,7 +102,7 @@ form.onsubmit = (e) => {
 // LocalStorage
 const accounts = [
     { email: "admin", password: "admin123", redirect: "./admin/index.html", isPremium: true },
-    { email: "user", password: "user123", redirect: "index.html", isPremium: false }
+    { email: "user", password: "user123", redirect: "index.html", isPremium: true }
 ];
 
 document.querySelector("form").addEventListener("submit", function(event) {
